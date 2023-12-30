@@ -11,13 +11,15 @@
     />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+
     <title>Formula 1 | Races</title>
   </head>
   <body>    
     <main>
       {% block content %}
-      <section class="race-container">
+      <section class="container">
+        <h2> RACES </h2>
         <table class="styled-table">
           <tbody>
             <tr>
@@ -32,7 +34,7 @@
                 <td>{{ race.date }}</td>
                 <td>{{ race.location }}</td>
               <td>
-                <a href=#><button class="btn-update">Edit</button></a> |
+                <a href=#><button class="btn-update">Edit</button></a>
                 <a  href=# ><button class="btn-delete">Delete</button></a>
               </td>
             </tr>

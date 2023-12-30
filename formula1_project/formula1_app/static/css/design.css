@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
-    font-family: 'Segoe UI';
+    font-family: 'Oswald', sans-serif;
   }
   
   body::before {
@@ -88,89 +88,94 @@
     position: fixed;
     height: 20vh;
     width: 100%;
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.5);
     color: white;
     bottom: 0;
     text-align: center;
   }
+
+  .brand-logo {
+    width: 50px; 
+  }
+
+  .brand-section {
+    display: flex;
+    align-items: center;
+  }
   
-  /*-----------------------------HOME_PAGE---------------------------------------*/
-  /*CONTENT*/
   .home-content {
     min-height: 100vh;
   }
   
-  /*-----------------------------TRAINER_PAGE------------------------------------*/
-  /*TRAINERS*/
-  .trainers-container {
-    min-height: auto;
-    border-collapse: collapse;
-    margin: 1%;
-    display: flex;
-    justify-content: center;
-    /* align-items: center; */
-  }
-  
-  .trainers-container table {
-    border-collapse: collapse;
-    background-color: white;
-    border: 2px solid #dddddd;
-  }
-  
-  .trainers-container th,
-  .trainers-container td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  .trainers-container th {
-    background-color: white;
-  }
-  
-  .trainers-container td pre {
-    margin: 0;
-  }
-  
-  .trainers-container td b {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .trainers-container td b {
-    color: #000000;
-  }
-  
-  /*-----------------------------championsip_PAGE---------------------------------*/
-  /* CSS for championship.html */
+/* CSS for styling h2 and a elements inside the .container section */
 
-/* Centering the championship container */
-
+.container h2 {
+    font-size: 24px; /* Example: Adjust the font size */
+    color: #ffffff; /* Example: Set the text color */
+    margin-bottom: 20px; /* Example: Add margin below h2 */
+    padding-left: 20%;
+    font-size: 50px;
+    text-shadow: #ff8585;
+  }
   
-  /* Centering the table within the container */
-  .styled-table {
-    border-collapse: collapse;
-    width: 100%;
-    background-color: white;
-    border: 2px solid #dddddd;
-    margin: 0 auto; /* Center the table */
+  .container a {
+    display: inline-block; /* Make anchor tags behave like blocks */
+    padding: 5px 10px; /* Example: Add padding to anchor tags */
+    color: #444; /* Example: Set text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Example: Add border radius */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  .container a:hover {
+    background-color: #ddd; /* Example: Change background color on hover */
+  }
+  
+.styled-table {
+    width: 80%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   }
   
   .styled-table th,
   .styled-table td {
-    border: 1px solid #dddddd;
+    border: 1px solid #ddd;
     text-align: center;
-    padding: 8px;
+    padding: 10px; /* Increased padding for better spacing */
+  }
+
+  .styled-table td {
+    padding-top: 6px; /* Adjust top padding for cell height */
+    padding-bottom: 6px; /* Adjust bottom padding for cell height */
+    /* You can adjust padding-top and padding-bottom individually */
   }
   
   .styled-table th {
-    background-color: white;
+    background-color: #ff8585; /* Slightly intensified red for headers */
+    text-align: left;
   }
   
-  /* Adjustments for other containers or elements */
-  /* Add your specific styles here */
+  /* Alternate row background color */
+  .styled-table tbody tr:nth-child(even) {
+    background-color: #ffe6e6; /* Lighter red for even rows */
+  }
+
+  .styled-table tbody tr:nth-child(odd) {
+    background-color: #ff9b9b; /* Lighter red for even rows */
+  }
   
-  /* For example, if you want to style the buttons */
+  /* Hover effect */
+  .styled-table tbody tr:hover {
+    background-color: #ffd1d1; /* Lighter red on hover for better UX */
+  }
+
+  .styled-table th:last-child { /* Selects the last th element within .styled-table */
+    width: 175px; /* Example: Set a specific width for the 'Action' header */
+  }
+  
   .btn-update,
   .btn-delete {
     padding: 5px 10px;
@@ -180,41 +185,7 @@
     cursor: pointer;
     text-decoration: none;
   }
-  
-  /* Define any other styles you need for the remaining elements */
-  
-  
-  /* Style for trainer and collection table */
-  .styled-table {
-    width: 80%;
-    border-collapse: collapse;
-    border: 1px solid #ddd; /* Border for the table */
-  }
-  
-  /* Style for table headers */
-  .styled-table th {
-    background-color: #f2f2f2; /* Header background color */
-    padding: 8px;
-    text-align: left;
-    border: 1px solid #ddd; /* Border for the header cells */
-  }
-  
-  /* Style for table data cells */
-  .styled-table td {
-    padding: 8px;
-    text-align: left;
-    border: 1px solid #ddd; /* Border for the data cells */
-  }
-  
-  /* Alternate row background color */
-  .styled-table tbody tr:nth-child(even) {
-    background-color: #ffdddd; /* Light red color for even rows */
-  }
-  
-  /* Alternate row background color for odd rows (to maintain white color) */
-  .styled-table tbody tr:nth-child(odd) {
-    background-color: #ffffff; /* White color for odd rows */
-  }
+
 
   
   /* Pagination */
