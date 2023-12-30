@@ -45,8 +45,12 @@
           </tbody>
         </table>
       </section>
-        <div>
-        </div>  
+      <br><br><br>
+      <div>
+        {% block pagination %}
+          {% include 'includes/pagination.html' %}
+        {% endblock %}
+      </div>   
       {% endblock %}
     </main>
   </body>

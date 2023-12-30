@@ -46,8 +46,6 @@ class Championship(BaseModel):
     name = models.CharField(max_length=100)
     season_start = models.DateField()
     season_end = models.DateField()
-    teams = models.ForeignKey(Team, on_delete=models.CASCADE)
-    races = models.ForeignKey(Race, on_delete=models.CASCADE)
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE)
 
     def __str__(self):
