@@ -17,7 +17,7 @@ class ResultAdmin(BaseModelAdmin):
     list_display = ('race', 'driver', 'position', 'best_lap_time', 'created_at', 'updated_at')
 
 class ChampionshipAdmin(BaseModelAdmin):
-    list_display = ('name', 'season_start', 'season_end', 'created_at', 'updated_at')
+    list_display = ('name', 'driver', 'season_start', 'season_end', 'created_at', 'updated_at')
 
 # Register the models with their respective Admin classes
 admin.site.register(Driver, DriverAdmin)

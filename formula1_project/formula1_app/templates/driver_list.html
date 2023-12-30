@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <title>Formula 1 | Drivers</title>
+  </head>
+  <body>    
+    <main>
+      {% block content %}
+      <section class="driver-container">
+        <table class="styled-table">
+          <tbody>
+            <tr>
+                <th>Driver Name</th>
+                <th>Nationality</th>
+                <th>Birth Date</th>
+                <th>Team</th>
+                <th>Action</th>
+            </tr>
+          {% for driver in drivers %}
+            <tr>
+                <td>{{ driver.name }}</td>
+                <td>{{ driver.nationality }}</td>
+                <td>{{ driver.birth_date }}</td>
+                <td>{{ driver.team.name }}</td>
+              <td>
+                <a href=#><button class="btn-update">Edit</button></a> |
+                <a  href=# ><button class="btn-delete">Delete</button></a>
+              </td>
+            </tr>
+            {% empty %}
+          {% endfor %}
+          </tbody>
+        </table>
+      </section>
+        <div>
+        </div>  
+      {% endblock %}
+    </main>
+  </body>
+</html>

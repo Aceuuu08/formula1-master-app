@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <title>Formula 1 | Races</title>
+  </head>
+  <body>    
+    <main>
+      {% block content %}
+      <section class="race-container">
+        <table class="styled-table">
+          <tbody>
+            <tr>
+                <th>Grand Prix</th>
+                <th>Date</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+          {% for race in races %}
+            <tr>
+                <td>{{ race.title }}</td>
+                <td>{{ race.date }}</td>
+                <td>{{ race.location }}</td>
+              <td>
+                <a href=#><button class="btn-update">Edit</button></a> |
+                <a  href=# ><button class="btn-delete">Delete</button></a>
+              </td>
+            </tr>
+            {% empty %}
+          {% endfor %}
+          </tbody>
+        </table>
+      </section>
+        <div>
+        </div>  
+      {% endblock %}
+    </main>
+  </body>
+</html>

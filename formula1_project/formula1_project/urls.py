@@ -16,7 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from formula1_app.views import Home, TeamListView, DriverListView, RaceListView, ResultListView, ChampionshipListView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', Home.as_view(), name='home'),
+    path('team_list/', TeamListView.as_view(), name='team-list'),
+    path('driver_list/', DriverListView.as_view(), name='driver-list'),
+    path('race_list/', RaceListView.as_view(), name='race-list'),
+    path('result_list/', ResultListView.as_view(), name='result-list'),
+    path('championship_list/', ChampionshipListView.as_view(), name='championship-list'),
 ]

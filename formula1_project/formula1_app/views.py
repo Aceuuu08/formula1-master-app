@@ -1,28 +1,44 @@
 from django.shortcuts import render
 from django.views import View
+from django.views.generic.list import ListView
+from django.urls import reverse_lazy
 from .models import Team, Driver, Race, Result, Championship
 
-class TeamListView(View):
-    def get(self, request):
-        teams = Team.objects.all()
-        return render(request, 'team_list.html', {'teams': teams})
+class Home(ListView):
+    model = Driver
+    content_onject_name = 'home'
+    template_name = "base.html"
 
-class DriverListView(View):
-    def get(self, request):
-        drivers = Driver.objects.all()
-        return render(request, 'driver_list.html', {'drivers': drivers})
-
-class RaceListView(View):
-    def get(self, request):
-        races = Race.objects.all()
-        return render(request, 'race_list.html', {'races': races})
-
-class ResultListView(View):
-    def get(self, request):
-        results = Result.objects.all()
-        return render(request, 'result_list.html', {'results': results})
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
     
-class ChampionshipListView(View):
-    def get(self, request):
-        championships = Championship.objects.all()
-        return render(request, 'championship_list.html', {'championships': championships})
+# TEAM    
+class TeamListView(ListView):
+    model = Team
+    context_object_name = 'teams'
+    template_name = 'team_list.html'
+
+# DRIVER
+class DriverListView(ListView):
+    model = Driver
+    context_object_name = 'drivers'
+    template_name = 'driver_list.html'
+
+# RACE
+class RaceListView(ListView):
+    model = Race
+    context_object_name = 'races'
+    template_name = 'race_list.html'
+
+# RESULT
+class ResultListView(ListView):
+    model = Result
+    context_object_name = 'results'
+    template_name = 'result_list.html'
+
+# CHAMPIONSHIP
+class ChampionshipListView(ListView):
+    model = Championship
+    context_object_name = 'championships'
+    template_name = 'championship_list.html'
