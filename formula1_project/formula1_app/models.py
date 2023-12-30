@@ -41,3 +41,13 @@ class Result(BaseModel):
 
     def __str__(self):
         return f"{self.race.title} - {self.driver.name} - Position: {self.position}"
+
+class Championship(BaseModel):
+    name = models.CharField(max_length=100)
+    season_start = models.DateField()
+    season_end = models.DateField()
+    teams = models.ManyToManyField(Team)
+    races = models.ManyToManyField(Race)
+
+    def __str__(self):
+        return self.name

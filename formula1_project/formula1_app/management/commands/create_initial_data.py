@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from formula1_app.models import Team, Driver, Race, Result
+from formula1_app.models import Team, Driver, Race, Result, Championship
 from datetime import date
 
 class Command(BaseCommand):
@@ -61,5 +61,20 @@ class Command(BaseCommand):
 
         result2 = Result(race=race2, driver=driver2, position=2, best_lap_time=80.123)
         result2.save()
+
+        championship1 = Championship(
+            name="2023 F1 World Championship",
+            season_start=date(2023, 1, 1),
+            season_end=date(2023, 12, 31),
+        )
+        championship1.save()
+
+        championship2 = Championship(
+            name="2024 F1 World Championship",
+            season_start=date(2024, 1, 1),
+            season_end=date(2024, 12, 31),
+        )
+        championship2.save()
+
 
         self.stdout.write(self.style.SUCCESS('Successfully created initial F1 data.'))
