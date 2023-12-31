@@ -12,6 +12,7 @@ class Team(BaseModel):
     name = models.CharField(max_length=100)
     country = models.CharField(max_length=100)
     team_principal = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='static/images/teams', null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -21,6 +22,7 @@ class Driver(BaseModel):
     nationality = models.CharField(max_length=50)
     birth_date = models.DateField()
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='static/images/drivers', null=True, blank=True)
 
     def __str__(self):
         return self.name

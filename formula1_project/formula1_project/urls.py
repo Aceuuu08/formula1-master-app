@@ -17,7 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from formula1_app.views import Home, TeamListView, DriverListView, RaceListView, ResultListView, ChampionshipListView
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,3 +29,6 @@ urlpatterns = [
     path('result_list/', ResultListView.as_view(), name='result-list'),
     path('championship_list/', ChampionshipListView.as_view(), name='championship-list'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
