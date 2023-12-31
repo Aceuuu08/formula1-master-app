@@ -19,9 +19,6 @@
     <main>
       {% block content %}
       <section class="container">
-        <h2> RESULTS </h2><br><br>
-        <a href=#><button class="btn-add">Add New result</button></a><br>
-
         <table class="styled-table">
           <tbody>
             <tr>
@@ -29,7 +26,6 @@
                 <th>Position</th>
                 <th>Birth Date</th>
                 <th>Team</th>
-                <th>Action</th>
             </tr>
           {% for result in results %}
             <tr>
@@ -37,10 +33,6 @@
                 <td>{{ result.position }}</td>
                 <td>{{ result.best_lap_time }}</td>
                 <td>{{ result.race.title }}</td>
-              <td>
-                <a href=#><button class="btn-update">Edit</button></a>
-                <a href=# ><button class="btn-delete">Delete</button></a>
-              </td>
             </tr>
             {% empty %}
           {% endfor %}

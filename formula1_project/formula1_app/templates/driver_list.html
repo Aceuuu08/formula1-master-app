@@ -27,7 +27,6 @@
                 <th>Nationality</th>
                 <th>Birth Date</th>
                 <th>Team</th>
-                <th>Action</th>
             </tr>
           {% for driver in drivers %}
             <tr>
@@ -35,10 +34,6 @@
                 <td>{{ driver.nationality }}</td>
                 <td>{{ driver.birth_date }}</td>
                 <td>{{ driver.team.name }}</td>
-              <td>
-                <a href=#><button class="btn-update">Edit</button></a>
-                <a  href=# ><button class="btn-delete">Delete</button></a>
-              </td>
             </tr>
             {% empty %}
           {% endfor %}

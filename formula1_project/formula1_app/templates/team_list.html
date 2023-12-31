@@ -26,17 +26,12 @@
                 <th>Team Name</th>
                 <th>Country</th>
                 <th>Team Principal</th>
-                <th>Action</th>
             </tr>
           {% for team in teams %}
             <tr>
                 <td>{{ team.name }}</td>
                 <td>{{ team.country }}</td>
                 <td>{{ team.team_principal }}</td>
-              <td>
-                <a href=#><button class="btn-update">Edit</button></a>
-                <a  href=# ><button class="btn-delete">Delete</button></a>
-              </td>
             </tr>
             {% empty %}
           {% endfor %}
