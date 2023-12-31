@@ -23,12 +23,23 @@
         <table class="styled-table">
           <tbody>
             <tr>
+                <th>Team Car</th>
                 <th>Team Name</th>
                 <th>Country</th>
                 <th>Team Principal</th>
             </tr>
           {% for team in teams %}
             <tr>
+              {% if team.image %}
+              <td style="max-width: 10px;">
+                <img src="{{ team.image.url }}" alt="can't load image" class="photo-size"
+                style="max-width: 100%;">
+              </td>
+              {% else %}
+              <td>
+                <img src="{"no"}" alt="No image" class="photo-size">
+              </td>
+              {% endif %}
                 <td>{{ team.name }}</td>
                 <td>{{ team.country }}</td>
                 <td>{{ team.team_principal }}</td>

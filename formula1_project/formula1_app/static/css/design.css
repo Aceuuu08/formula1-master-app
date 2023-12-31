@@ -171,10 +171,6 @@
   .styled-table tbody tr:hover {
     background-color: #ffd1d1; /* Lighter red on hover for better UX */
   }
-
-  .styled-table th:last-child { /* Selects the last th element within .styled-table */
-    width: 175px; /* Example: Set a specific width for the 'Action' header */
-  }
   
   .btn-update,
   .btn-delete {
@@ -185,7 +181,6 @@
     cursor: pointer;
     text-decoration: none;
   }
-
 
   
   /* Pagination */
