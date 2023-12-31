@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'championshipnavbar.html' %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="../static/css/design.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 
     <title>Formula 1 | Championships</title>
   </head>
@@ -24,6 +24,8 @@
           <tbody>
             <tr>
                 <th>Title</th>
+                <th>Winning Car</th>
+                <th>Driver Profile</th>
                 <th>Driver Name</th>
                 <th>Season Start</th>
                 <th>Season End</th>
@@ -31,6 +33,29 @@
           {% for championship in championships %}
             <tr>
                 <td>{{ championship.name }}</td>
+
+                {% if championship.team.image %}
+                    <td style="max-width: 100px;">
+                      <img src="{{ championship.team.image.url }}" alt="can't load image" class="photo-size"
+                      style="max-width: 100%;">
+                    </td>
+                    {% else %}
+                    <td>
+                      <img src="{"no"}" alt="No image" class="photo-size">
+                    </td>
+                  {% endif %}
+
+                  {% if championship.driver.image %}
+                    <td style="max-width: 75px;">
+                      <img src="{{ championship.driver.image.url }}" alt="can't load image" class="photo-size"
+                      style="max-width: 100%;">
+                    </td>
+                    {% else %}
+                    <td>
+                      <img src="{"no"}" alt="No image" class="photo-size">
+                    </td>
+                  {% endif %}
+
                 <td>{{ championship.driver.name }}</td>
                 <td>{{ championship.season_start }}</td>
                 <td>{{ championship.season_end }}</td>

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'drivernavbar.html' %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 
     <title>Formula 1 | Drivers</title>
   </head>
@@ -23,6 +23,7 @@
         <table class="styled-table">
           <tbody>
             <tr>
+                <th>Driver Profile</th>
                 <th>Driver Name</th>
                 <th>Nationality</th>
                 <th>Birth Date</th>
@@ -30,6 +31,16 @@
             </tr>
           {% for driver in drivers %}
             <tr>
+                {% if driver.image %}
+                <td style="max-width: 75px;">
+                  <img src="{{ driver.image.url }}" alt="can't load image" class="photo-size"
+                  style="max-width: 100%;">
+                </td>
+                {% else %}
+                <td>
+                  <img src="{"no"}" alt="No image" class="photo-size">
+                </td>
+                {% endif %}
                 <td>{{ driver.name }}</td>
                 <td>{{ driver.nationality }}</td>
                 <td>{{ driver.birth_date }}</td>
@@ -39,13 +50,13 @@
           {% endfor %}
           </tbody>
         </table>
-      </section>
+      </section>  
       <br><br><br>
       <div>
         {% block pagination %}
           {% include 'includes/pagination.html' %}
         {% endblock %}
-      </div>   
+      </div>       
       {% endblock %}
     </main>
   </body>

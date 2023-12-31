@@ -40,7 +40,6 @@ class Result(BaseModel):
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE)
     position = models.IntegerField()
     best_lap_time = models.DecimalField(max_digits=6, decimal_places=3)
-
     def __str__(self):
         return f"{self.race.title} - {self.driver.name} - Position: {self.position}"
 
@@ -49,6 +48,6 @@ class Championship(BaseModel):
     season_start = models.DateField()
     season_end = models.DateField()
     driver = models.ForeignKey(Driver, on_delete=models.CASCADE)
-
+    team = models.ForeignKey(Team, on_delete=models.CASCADE)
     def __str__(self):
         return self.name

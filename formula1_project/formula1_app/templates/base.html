@@ -7,8 +7,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link rel="stylesheet" href="../static/css/design.css">
-    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static '../static/css/design.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>{% block title %} Formula 1 Master {% endblock %}</title>
   </head>
@@ -19,7 +19,7 @@
         <img src="../static/images/formulalogo.png" alt="Brand Logo" class="brand-logo">
       </div>
         <div class="nav-links">
-          <a href="{% url 'home' %}" class="btn"> Home </a>
+          <a href="{% url 'home' %}" class="btn" id="active"> Home </a>
           <a href="{% url 'driver-list' %}" class="btn"> Drivers </a>
           <a href="{% url 'team-list' %}" class="btn"> Teams </a>
           <a href="{% url 'race-list' %}" class="btn"> Races </a>
@@ -29,13 +29,25 @@
     </section>
 
     <!--CONTENT-->
-  <main>
-  {% block content %}
-  
-  {% endblock%}
-  </main>
-      
-    
+    <main>
+      {% block content %}
+      <div class="login-form-container">
+        <div class="login-container">
+          <section class="home">
+            <h1 class="login-title">Welcome!</h1>
+            <p class="login-instructions">Select login type:</p>
+            <div class="btn-container">
+              <a href="{% url 'admin:index' %}" class="login-btn">Admin Login</a>
+            </div>
+            <div class="btn-container">
+              <a href="{% url 'driver-list' %}" class="login-btn">User Login</a>
+            </div>
+          </section>
+        </div>
+      </div>
+      {% endblock %}
+    </main>
+    <br><br><br><br><br><br>
 
     {% include 'includes/footer.html' %}
   </body>

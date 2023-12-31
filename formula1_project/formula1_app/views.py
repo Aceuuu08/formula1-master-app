@@ -18,21 +18,21 @@ class TeamListView(ListView):
     model = Team
     context_object_name = 'teams'
     template_name = 'team_list.html'
-    paginate_by = 5
+    paginate_by = 4
 
 # DRIVER
 class DriverListView(ListView):
     model = Driver
     context_object_name = 'drivers'
     template_name = 'driver_list.html'
-    paginate_by = 5
+    paginate_by = 4
 
 # RACE
 class RaceListView(ListView):
     model = Race
     context_object_name = 'races'
     template_name = 'race_list.html'
-    paginate_by = 5
+    paginate_by = 7
 
 # RESULT
 class ResultListView(ListView):

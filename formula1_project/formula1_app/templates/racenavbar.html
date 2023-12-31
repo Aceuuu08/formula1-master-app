@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="{% static '../static/css/design.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <title>{% block title %} Formula 1 | Results {% endblock %}</title>
+  </head>
+  <body>
+
+    <!-- navbar -->
+    <section class="navbar">
+        <div class="brand-section">
+          <img src="../static/images/formulalogo.png" alt="Brand Logo" class="brand-logo">
+        </div>
+          <div class="nav-links">
+            <a href="{% url 'home' %}" class="btn"> Home </a>
+            <a href="{% url 'driver-list' %}" class="btn"> Drivers </a>
+            <a href="{% url 'team-list' %}" class="btn"> Teams </a>
+            <a href="{% url 'race-list' %}" class="btn" id="active"> Races </a>
+            <a href="{% url 'result-list' %}" class="btn"> Results </a>
+            <a href="{% url 'championship-list' %}" class="btn"> Championships </a>
+          </div>
+      </section>
+
+    <!-- Main content of your webpage -->
+    <main>
+      {% block content %}
+
+      {% endblock %}
+    </main>
+
+    {% include 'includes/footer.html' %}
+    
+  </body>
+</html>

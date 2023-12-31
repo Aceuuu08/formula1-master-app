@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'resultnavbar.html' %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
 
     <title>Formula 1 | Results</title>
   </head>
-  <body>    
+  <body>     
     <main>
       {% block content %}
       <section class="container">
@@ -23,6 +23,7 @@
         <table class="styled-table">
           <tbody>
             <tr>
+                <th>Driver Profile</th>
                 <th>Driver Name</th>
                 <th>Position</th>
                 <th>Birth Date</th>
@@ -30,6 +31,16 @@
             </tr>
           {% for result in results %}
             <tr>
+                {% if result.driver.image %}
+                    <td style="max-width: 75px;">
+                      <img src="{{ result.driver.image.url }}" alt="can't load image" class="photo-size"
+                      style="max-width: 100%;">
+                    </td>
+                    {% else %}
+                    <td>
+                      <img src="{"no"}" alt="No image" class="photo-size">
+                    </td>
+                  {% endif %}
                 <td>{{ result.driver.name }}</td>
                 <td>{{ result.position }}</td>
                 <td>{{ result.best_lap_time }}</td>

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'teamnavbar.html' %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -31,7 +31,7 @@
           {% for team in teams %}
             <tr>
               {% if team.image %}
-              <td style="max-width: 10px;">
+              <td style="max-width: 75px;">
                 <img src="{{ team.image.url }}" alt="can't load image" class="photo-size"
                 style="max-width: 100%;">
               </td>
